@@ -240,6 +240,10 @@ body {
     color: #898989;
 }
 
+.template {
+    display: none;
+}
+
 .chat {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -250,21 +254,30 @@ body {
     padding: 30px 100px;
 }
 
-.message-received {
+.message.received {
+    background-color: white;
+    margin-top: 5px;
+    float: left;
     background-color: white;
     max-width: 350px;
+    min-width: 160px;
     padding: 15px 15px 5px 15px;;
     border-radius: 5px;
+    clear: both;
 }
 
-.message-sent {
+.message.sent {
     background-color: #c8f799;
+    margin-top: 5px;
+    float: right;
     max-width: 350px;
+    min-width: 160px;
     padding: 15px 15px 5px 15px;;
     border-radius: 5px;
+    clear: both;
 }
 
-.message {
+.text-message {
     line-height: 25px;
 }
 
@@ -272,6 +285,19 @@ body {
     color: #898989;
     font-size: 11px;
     text-align: right;
+}
+
+.message-options {
+    float: right;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #898989;
+    display: none;
+}
+
+.message-options:hover {
+    display: block;
 }
 
 .footer-right-container {
@@ -287,13 +313,13 @@ body {
     border-top: 1px solid rgba(175, 175, 175, .3);
 }
 
-.right-footer-icon {
+.footer-icon-left, .footer-icon-right {
     width: 10%;
     display: flex;
     justify-content: center;
 }
 
-.right-footer-icon i {
+.footer-icon-left i, .footer-icon-right i {
     font-size: 24px;
     color: #898989;
 }
@@ -308,12 +334,4 @@ body {
 
 .active {
     background-color: #e0dede;
-}
-
-.message.received {
-    background-color: #c8f799;
-}
-
-.message.sent {
-    background-color: white;
 }
