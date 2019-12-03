@@ -68,7 +68,7 @@ body {
 }
 
 .left-top-icons {
-    color: #adadad;
+    color: #898989;
     font-size: 20px;
     margin-right: 10px;
     margin-top: calc((80px - 20px) / 2);
@@ -158,7 +158,7 @@ body {
 
 .contact-search i {
     font-size: 20px;
-    color: #adadad;
+    color: #898989;
 }
 
 .notice, .contact {
@@ -204,6 +204,7 @@ body {
     position: absolute;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid rgba(175, 175, 175, .3);
 }
 
 .right-top-subcontainer {
@@ -233,7 +234,7 @@ body {
 .active-chat-icons i {
     margin-right: 10px;
     font-size: 20px;
-    color: #adadad;
+    color: #898989;
 }
 
 .chat {
@@ -245,11 +246,34 @@ body {
     overflow-y: scroll;
 }
 
-.footer-right {
+.footer-right-container {
     width: 100%;
     height: 80px;
     background-color: #e0dede;
     position: absolute;
     bottom: 0;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(175, 175, 175, .3);
+}
+
+.right-footer-icon {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.right-footer-icon i {
+    font-size: 24px;
+    color: #898989;
+}
+
+.new-message-inputs {
+    width: 80%;
+    height: 70%;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
 }
