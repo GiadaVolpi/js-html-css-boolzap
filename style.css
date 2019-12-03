@@ -6,6 +6,9 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
 }
 
 .viewport-container {
@@ -44,13 +47,16 @@ body {
     width: 65%;
     height: 100%;
     position: relative;
-    background-color: lightblue;
+}
+
+.left-top {
+    border-right: 1px solid rgba(175, 175, 175, .3);
 }
 
 .left-top, .right-top {
     width: 100%;
     height: 80px;
-    background-color: grey;
+    background-color: #e0dede;
 }
 
 .myavatar {
@@ -61,10 +67,52 @@ body {
     margin-top: calc((80px - 60px) / 2);
 }
 
+.left-top-icons {
+    color: #adadad;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: calc((80px - 20px) / 2);
+}
+
+.left-top-icons i {
+    margin-right: 10px;
+}
+
 .round-image {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+
+.notice {
+    background-color: #96efff;
+    display: flex;
+    align-items: center;
+}
+
+.notice-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice-icon i {
+    font-size: 28px;
+    color: #96efff;
+}
+
+.notice-text {
+    margin-left: 20px;
+}
+
+.notice-text small {
+    text-decoration: underline;
+    color: #a3a3a3;
 }
 
 .contact-search {
@@ -158,10 +206,40 @@ body {
     z-index: 100;
 }
 
+.right-top-subcontainer {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.active-chat-left {
+    display: flex;
+    align-items: center;
+}
+
+.active-chat-img {
+    margin-left: 20px;
+}
+
+.active-chat-info {
+    margin-left: 20px;
+}
+
+.active-chat-icons {
+    margin-right: 20px;
+}
+
+.active-chat-icons i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #adadad;
+}
+
 .chat {
     width: 100%;
     height: 100%;
-    background-color: pink;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
     position: absolute;
     top: 0;
     overflow-y: scroll;
@@ -170,7 +248,7 @@ body {
 .footer-right {
     width: 100%;
     height: 80px;
-    background-color: grey;
+    background-color: #e0dede;
     position: absolute;
     bottom: 0;
     z-index: 100;
