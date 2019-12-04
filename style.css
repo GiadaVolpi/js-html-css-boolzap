@@ -256,7 +256,7 @@ body {
 
 .message.received {
     background-color: white;
-    margin-top: 5px;
+    margin-top: 10px;
     float: left;
     background-color: white;
     max-width: 350px;
