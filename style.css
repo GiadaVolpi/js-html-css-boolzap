@@ -195,6 +195,10 @@ body {
     padding: 10px;
 }
 
+.message.active {
+    display: block;
+}
+
 .name, .surname {
     font-weight: bold;
 }
@@ -244,6 +248,10 @@ body {
     display: none;
 }
 
+.template.active {
+    display: block;
+}
+
 .chat {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -252,6 +260,10 @@ body {
     background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
     overflow-y: scroll;
     padding: 30px 100px;
+}
+
+.chat-contact {
+    display: none;
 }
 
 .message.received {
@@ -334,4 +346,56 @@ body {
 
 .active {
     background-color: #e0dede;
+}
+
+.active .name-surname {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1440px) {
+    .round-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .active-chat-img {
+        margin-top: 20px;
+    }
+
+    .active-chat-info {
+        margin-top: 20px;
+    }
+
+    .active-chat-icons {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+        width: 95%;
+        height: 95%;
+    }
+
+    .left-container {
+        width: 45%;
+    }
+
+    .right-container {
+        width: 55%;
+    }
+
+    .chat {
+        padding: 20px 50px;
+    }
+
+    .message.received {
+        max-width: 200px;
+        min-width: 100px;
+    }
+
+    .message.sent {
+        max-width: 200px;
+        min-width: 100px;
+    }
 }

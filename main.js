@@ -28,11 +28,31 @@ $ (document).ready (function () {
 
 
     // intercetto i tasti digitati nell'input della ricerca con il keyup (cioè nel momento in cui il tasto è stato viene rilasciato)
-    $ ("#search").keyup (ricercaContatto());
+    $ ("#search").keyup (ricercaContatto);
 
 
     // intercetto il click sulla lente d'ingrandimento per dare il via alla ricerca
-    $ (".search-icon-container").click (ricercaContatto());
+    $ (".search-icon-container").click (ricercaContatto);
+
+
+    // intercetto il click sul contatto
+    $ (".contact").click (function () {
+        // prendo l'attributo data del contatto sul quale ho cliccato
+        var chatAttiva = $ (this).attr ("data-utente");
+        console.log(chatAttiva);
+
+        // tolgo la classe active da tutti i contatti
+        $ (".contact").removeClass ("active");
+
+        // aggiungo classe active al contatto sul quale ho cliccato
+        $ (this).addClass ("active");
+
+        // rimuovo la chat attiva
+        $ (".chat-contact").removeClass ("active");
+
+        // visualizzo la chat corrispondente al contatto attivo
+        $ ('.chat-contact[data-utente="' + chatAttiva + '"]').addClass ("active");
+    })
 
 
     function inviaMessaggio () {
@@ -87,11 +107,11 @@ $ (document).ready (function () {
                 var contatto = $ (this).find (".name-surname").text();
 
                 // trasformo il nome contatto e il testo della ricerca in modo che siano tutti in minuscolo
-                testoRicerca = testoRicerca.toLowerCase ();
-                contatto = contatto.toLowerCase ();
+                testoRicerca = testoRicerca.toLowerCase();
+                contatto = contatto.toLowerCase();
 
                 // se il testo della ricerca corrisponde al contatto
-                if (contatto.includes (testoRicerca)) {
+                if (contatto.includes(testoRicerca)) {
                     // mostro il contatto corrispondente alla testoRicerca
                     $ (this).show ();
                 } else {
