@@ -1,4 +1,5 @@
 $ (document).ready (function () {
+
     // intercetto il click per invio messaggio
     $ (".footer-icon-right").click (function () {
         inviaMessaggio();
@@ -35,11 +36,11 @@ $ (document).ready (function () {
     $ (".search-icon-container").click (ricercaContatto);
 
 
+    // cambio chat attiva
     // intercetto il click sul contatto
     $ (".contact").click (function () {
         // prendo l'attributo data del contatto sul quale ho cliccato
         var chatAttiva = $ (this).attr ("data-utente");
-        console.log(chatAttiva);
 
         // tolgo la classe active da tutti i contatti
         $ (".contact").removeClass ("active");
@@ -52,7 +53,35 @@ $ (document).ready (function () {
 
         // visualizzo la chat corrispondente al contatto attivo
         $ ('.chat-contact[data-utente="' + chatAttiva + '"]').addClass ("active");
+
+        // prendo il nome del contatto cliccato
+        var nomeContatto = $ (this).find (".name-surname").text ();
+        console.log(nomeContatto);
+
+        // sostituisco il nome del contatto sull'header "right-top" con il nome del contatto attivo
+        $ (".active-chat-right .name-surname").text (nomeContatto);
+
+        // prendo l'img del contatto cliccato
+        var imgContatto = $ (this).find (".img-container .round-image").attr ("src");
+
+        // sostituisco l'img del contatto sull'header "right-top" con l'img del contatto attivo
+        $ (".active-chat-right .round-image").attr ("src", imgContatto);
+    });
+
+
+    // intercetto il click sulla freccetta del messaggio in modo dinamico (anche sui messaggi non inseriti in HTML)
+    $ (document).on ("click", ".message-options", function () {
+        console.log("Click su freccetta messaggio");
+        // aggiungo la classe active al pannello con le opzioni
+        $ (this).siblings (".message-options-panel").toggleClass("active");
     })
+
+
+    // intercetto il click sull'opzione "cancella messaggio"
+    $ (document).on ("click", ".message-destroy", function () {
+        // ricerco il primo elemento padre con classe "message" e lo nascondo
+        $ (this).closest(".message").hide ();
+    });
 
 
     function inviaMessaggio () {
@@ -79,6 +108,7 @@ $ (document).ready (function () {
         }
     }
 
+
     function rispostaComputer () {
         // creo una variabile dove salvo la struttura del template
         var messaggioRisposta = $ (".template .message").clone ();
@@ -92,6 +122,7 @@ $ (document).ready (function () {
         // unisco il nuovoMessaggio all'HTML nel div con classe "right-message"
         $ (".right-messages.active").append (messaggioRisposta);
     }
+
 
     function ricercaContatto () {
         // prendo il contenuto testuale dell'input

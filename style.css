@@ -199,7 +199,7 @@ body {
     display: block;
 }
 
-.name, .surname {
+.name-surname {
     font-weight: bold;
 }
 
@@ -220,9 +220,13 @@ body {
     align-items: center;
 }
 
-.active-chat-left {
+.active-chat-right {
     display: flex;
     align-items: center;
+}
+
+.active-chat-right.active {
+    display: block;
 }
 
 .active-chat-img {
@@ -244,14 +248,6 @@ body {
     color: #898989;
 }
 
-.template {
-    display: none;
-}
-
-.template.active {
-    display: block;
-}
-
 .chat {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -264,6 +260,10 @@ body {
 
 .chat-contact {
     display: none;
+}
+
+.right-messages {
+    position: relative;
 }
 
 .message.received {
@@ -299,16 +299,41 @@ body {
     text-align: right;
 }
 
-.message-options {
+.right-messages .message i.message-options  {
     float: right;
     margin-left: 20px;
     margin-top: 5px;
     font-size: 13px;
-    color: #898989;
     display: none;
 }
 
-.message-options:hover {
+.right-messages .message:hover i.message-options  {
+    display: block;
+}
+
+.right-messages .message.active .message-options-panel {
+    background-color: white;
+    position: absolute;
+    right: 20px;
+    bottom: -135px;
+	width: 200px;
+	height: 90px;
+    border-radius: 4px;
+    padding: 15px;
+    line-height: 30px;
+	box-shadow: 0px 0px 10px 2px rgba(0,0,0,.2);
+    display: none;
+}
+
+.right-messages .message.active .message-options-panel .message-info, .right-messages .message.active .message-options-panel .message-destroy {
+    color: #898989;
+}
+
+.right-messages .message.active .message-options-panel .message-info:hover, .right-messages .message.active .message-options-panel .message-destroy:hover {
+    color: black;
+}
+
+.right-messages .message.active .message-options-panel.active {
     display: block;
 }
 
@@ -350,6 +375,10 @@ body {
 
 .active .name-surname {
     font-weight: bold;
+}
+
+.template {
+    display: none;
 }
 
 @media screen and (max-width: 1440px) {
