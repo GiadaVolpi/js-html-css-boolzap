@@ -262,10 +262,6 @@ body {
     display: none;
 }
 
-/* .right-messages {
-    position: relative;
-} */
-
 .message.received {
     background-color: white;
     margin-top: 10px;
@@ -311,6 +307,17 @@ body {
     display: none;
 }
 
+.right-messages.active .message:hover i.message-options {
+    display: block;
+}
+
+.right-messages.active .message-options-panel {
+    display: none;
+}
+
+.right-messages .message.active .message-options-panel.active {
+    display: block;
+}
 .right-messages .message:hover i.message-options  {
     display: block;
 }
